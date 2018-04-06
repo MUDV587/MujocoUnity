@@ -183,7 +183,8 @@ namespace MlaMujocoUnity {
         public override void AgentAction(float[] vectorAction, string textAction)
         {
             _actions = vectorAction
-                .Select(x=>Mathf.Clamp(x, -1, 1f))
+                .Select(x=>ScaleContinuousAction(x, -1f, 1f))
+                //.Select(x=>Mathf.Clamp(x, -1, 1f))
                 .ToList();
             // if (ShowMonitor)
             //     Monitor.Log("actions", _actions, MonitorType.hist);
