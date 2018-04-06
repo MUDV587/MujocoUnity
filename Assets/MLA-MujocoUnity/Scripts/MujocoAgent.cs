@@ -323,6 +323,7 @@ namespace MlaMujocoUnity {
 			var angle = Mathf.Abs(_mujocoController.qpos[2]);
 			bool endOnHeight = (height < .3f);
 			bool endOnAngle = (angle > (1f/180f) * (5.7296f *6));
+            endOnAngle = false; //HACK
 			return endOnHeight || endOnAngle;
 		}
 
