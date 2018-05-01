@@ -239,7 +239,8 @@ namespace MlaMujocoUnity {
         public override void AgentAction(float[] vectorAction, string textAction)
         {
             _actions = vectorAction
-                .Select(x=>Mathf.Clamp(x, -1, 1f))
+                //.Select(x=>Mathf.Clamp(x, -1f, 1f))
+                .Select(x=>Mathf.Clamp(x, -3, 3f)/3f)
                 .ToList();
             //KillJointPower(new []{"shoulder", "elbow"}); // HACK
             // if (ShowMonitor)
